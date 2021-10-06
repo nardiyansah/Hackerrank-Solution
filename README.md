@@ -13,3 +13,8 @@ Task | Solution
 Task | Solution
 -----|---------
 [Arrays: Left Rotation](https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem)|[Solution](/Ruby/left_rotation.rb)
+
+## Linux Shell
+Task | Solution
+-----|---------
+[Cut #6](https://www.hackerrank.com/challenges/text-processing-cut-6/problem)|[Solution](/Linux-Shell/cut6.sh)
