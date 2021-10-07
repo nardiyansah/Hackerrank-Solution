@@ -22,4 +22,5 @@ Task | Solution
 ## Linux Shell
 Task | Solution
 -----|---------
+[cut #7](https://www.hackerrank.com/challenges/text-processing-cut-7/problem)|[Solution](/Linux-Shell/cut7.sh)
 [Cut #6](https://www.hackerrank.com/challenges/text-processing-cut-6/problem)|[Solution](/Linux-Shell/cut6.sh)
