@@ -2,6 +2,11 @@
 
 This repo contains my solution to the problem I solved in Hackerrank. You can make pull request or contact me in my social media below to compare your solution with my own, or just discuss about it.
 
+## Algorithm and Data Structure
+Task | Solution
+-----|---------
+[Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)|[Solution](/ADS/between_two_set.cpp)
+
 ## C++
 Task | Solution
 -----|---------
