@@ -22,6 +22,7 @@ Task | Solution
 ## Linux Shell
 Task | Solution
 -----|---------
+[Head of a Text File #1](https://www.hackerrank.com/challenges/text-processing-head-1/problem)|[Solution](/Linux-Shell/head1.sh)
 [cut #9](https://www.hackerrank.com/challenges/text-processing-cut-9/problem)|[Solution](/Linux-Shell/cut9.sh)
 [cut #8](https://www.hackerrank.com/challenges/text-processing-cut-8/problem)|[Solution](/Linux-Shell/cut8.sh)
 [cut #7](https://www.hackerrank.com/challenges/text-processing-cut-7/problem)|[Solution](/Linux-Shell/cut7.sh)
