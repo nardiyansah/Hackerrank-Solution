@@ -10,6 +10,7 @@ Task | Solution
 ## C++
 Task | Solution
 -----|---------
+[variable sized arrays](https://www.hackerrank.com/challenges/variable-sized-arrays/problem)|[solution](/C++/variable_sized_arrays.cpp)
 [Jumping on the Clouds](https://www.hackerrank.com/challenges/jumping-on-the-clouds)|[Solution](/C++/jumping_on_the_clouds.cpp)
 [Counting Valleys](https://www.hackerrank.com/challenges/counting-valleys)|[Solution](/C++/counting_valleys.cpp)
 [Find the Point](https://www.hackerrank.com/challenges/find-point?h_r=profile)|[Solution](/C++/find_the_point.cpp)
