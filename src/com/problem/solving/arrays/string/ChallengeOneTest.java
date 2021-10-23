@@ -9,5 +9,8 @@ class ChallengeOneTest {
         ChallengeOne challengeOne = new ChallengeOne();
 
         assertFalse(challengeOne.uniqueChars());
+        assertTrue(challengeOne.uniqueChars(""));
+        assertFalse(challengeOne.uniqueChars("foo"));
+        assertTrue(challengeOne.uniqueChars("bar"));
     }
 }

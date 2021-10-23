@@ -7,6 +7,11 @@ Task | Solution
 -----|---------
 [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)|[Solution](/ADS/between_two_set.cpp)
 
+## Array and String
+Task | Test | Solution
+-----|------|---------
+[Determine if a string contains unique characters](http://nbviewer.ipython.org/github/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/unique_chars/unique_chars_challenge.ipynb)|[Test](/src/com/problem/solving/arrays/string/ChallengeOneTest.java)|[Solution](/src/com/problem/solving/arrays/string/ChallengeOne.java)
+
 ## C++
 Task | Solution
 -----|---------
