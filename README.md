@@ -12,6 +12,11 @@ Task | Test | Solution
 -----|------|---------
 [Determine if a string contains unique characters](http://nbviewer.ipython.org/github/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/unique_chars/unique_chars_challenge.ipynb)|[Test](/src/com/problem/solving/arrays/string/ChallengeOneTest.java)|[Solution](/src/com/problem/solving/arrays/string/ChallengeOne.java)
 
+## Linked List
+Task | Test | Solution
+-----|------|---------
+[Remove duplicates from a linked list](http://nbviewer.ipython.org/github/donnemartin/interactive-coding-challenges/blob/master/linked_lists/remove_duplicates/remove_duplicates_challenge.ipynb)|[Test](/src/com/problem/solving/linkedList/removeDuplicate/SolutionTest.java)|[Solution](/src/com/problem/solving/linkedList/removeDuplicate/Solution.java)
+
 ## C++
 Task | Solution
 -----|---------
