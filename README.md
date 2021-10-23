@@ -1,6 +1,6 @@
 # Grind Tracking (Hackerrank)
 
-This repo contains my solution to the problem I solved in Hackerrank. You can make pull request or contact me in my social media below to compare your solution with my own, or just discuss about it.
+This repo contains my solution to the problem I solved in Hackerrank or other resource.
 
 ## Algorithm and Data Structure
 Task | Solution
