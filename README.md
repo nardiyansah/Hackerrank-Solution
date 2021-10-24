@@ -2,6 +2,11 @@
 
 This repo contains my solution to the problem I solved in Hackerrank or other resource.
 
+## Hackerrank
+Task | Solution
+-----|---------
+[Hash Tables: Ice Cream Parlor](https://www.hackerrank.com/challenges/ctci-ice-cream-parlor)|[Solution](/interview-preparation-kit/ice_cream_parlor.cpp)
+
 ## Algorithm and Data Structure
 Task | Solution
 -----|---------
