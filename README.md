@@ -2,6 +2,11 @@
 
 This repo contains my solution to the problem I solved in Hackerrank or other resource.
 
+## LeetCode
+Task | Solution
+-----|---------
+[62. Unique Paths](https://leetcode.com/problems/unique-paths/)|[Solution](/C++/unique_paths.cpp)
+
 ## Hackerrank
 Task | Solution
 -----|---------
