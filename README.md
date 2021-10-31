@@ -13,6 +13,7 @@ Task | Solution
 ## Hackerrank
 Task | Solution
 -----|---------
+[Tree: Height of a Binary Tree](https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=trees)|[Solution](/Java/height_of_binary_tree.java)
 [Recursion: Fibonacci Numbers](https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=recursion-backtracking)|[Solution](/Ruby/fibonacci.rb)
 [Hash Tables: Ice Cream Parlor](https://www.hackerrank.com/challenges/ctci-ice-cream-parlor)|[Solution](/interview-preparation-kit/ice_cream_parlor.cpp)
 [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)|[Solution](/ADS/between_two_set.cpp)
