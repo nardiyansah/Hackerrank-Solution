@@ -9,6 +9,7 @@ my spreadsheet note : https://docs.google.com/spreadsheets/d/19xEi527sSBgCk6AVEO
 Concept | Code | Reference
 --------|------|----------
 Selection Sort|[Sample code in Ruby](/important-concept/selection_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/selection-sort/)
+Bubble Sort|[Sample code in Ruby](/important-concept/bubble_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/bubble-sort/)
 
 ## LeetCode
 Task | Solution
