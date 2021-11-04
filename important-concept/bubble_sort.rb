@@ -1,6 +1,6 @@
 # using two loop
 # if element i > element i+1 then swap
-
+# can be optimized to stop process if inner loop not do any swap
 def bubble_sort(arr)
     for i in 0..arr.length - 1 do
         # last i element already in place
