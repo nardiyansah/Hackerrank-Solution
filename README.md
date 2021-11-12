@@ -19,6 +19,7 @@ Task | Solution
 ## Hackerrank
 Task | Solution
 -----|---------
+[Zig Zag Sequence](https://www.hackerrank.com/challenges/one-week-preparation-kit-zig-zag-sequence)|[Solution](/C++/zig_zag_sequence.cpp)
 [Counting Sort 1](https://www.hackerrank.com/challenges/one-week-preparation-kit-countingsort1/)|[Solution](/C++/counting_sort1.cpp)
 [Diagonal Difference](https://www.hackerrank.com/challenges/one-week-preparation-kit-diagonal-difference/problem)|[Solution](/C++/diagonal_difference.cpp)
 [Lonely Integer](https://www.hackerrank.com/challenges/one-week-preparation-kit-lonely-integer/problem?h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-two)|[Solution](/C++/lonely_integer.cpp)
