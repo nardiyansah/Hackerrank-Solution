@@ -19,6 +19,7 @@ Task | Solution
 ## Hackerrank
 Task | Solution
 -----|---------
+[Tower Breakers](https://www.hackerrank.com/challenges/one-week-preparation-kit-tower-breakers-1)|[Solution](/interview-preparation-kit/tower_breaker.cpp)
 [Zig Zag Sequence](https://www.hackerrank.com/challenges/one-week-preparation-kit-zig-zag-sequence)|[Solution](/C++/zig_zag_sequence.cpp)
 [Counting Sort 1](https://www.hackerrank.com/challenges/one-week-preparation-kit-countingsort1/)|[Solution](/C++/counting_sort1.cpp)
 [Diagonal Difference](https://www.hackerrank.com/challenges/one-week-preparation-kit-diagonal-difference/problem)|[Solution](/C++/diagonal_difference.cpp)
