@@ -16,6 +16,7 @@ Sliding Window| |[designgurus](https://designgurus.org/path-player?courseid=grok
 Task | Solution
 -----|---------
 [62. Unique Paths](https://leetcode.com/problems/unique-paths/)|[Solution](/C++/unique_paths.cpp)
+[Longest substring with at most k distinc characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)|[Solution](/Python/longest_substring_with_K_distinct.py)
 
 ## Hackerrank
 Task | Solution
