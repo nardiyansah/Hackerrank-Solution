@@ -10,6 +10,7 @@ Concept | Code | Reference
 --------|------|----------
 Selection Sort|[Sample code in Ruby](/important-concept/selection_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/selection-sort/)
 Bubble Sort|[Sample code in Ruby](/important-concept/bubble_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/bubble-sort/)
+Sliding Window| |[designgurus](https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1627871350324_0Unit)
 
 ## LeetCode
 Task | Solution
