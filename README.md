@@ -8,6 +8,7 @@ This repo contains my solution to the problem I solved in Hackerrank or other re
 ## Important Concept
 Concept | Code | Reference
 --------|------|----------
+Bit Manipulation||[youtube video from Hackerrank](https://youtu.be/NLKQEOgBAnw)
 Selection Sort|[Sample code in Ruby](/important-concept/selection_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/selection-sort/)
 Bubble Sort|[Sample code in Ruby](/important-concept/bubble_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/bubble-sort/)
 Sliding Window| |[designgurus](https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1627871350324_0Unit)
