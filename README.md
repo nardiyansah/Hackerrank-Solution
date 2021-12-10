@@ -15,6 +15,7 @@ Sliding Window| |[designgurus](https://designgurus.org/path-player?courseid=grok
 ## LeetCode
 Task | Solution
 -----|---------
+[Fruit into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Solution](/Java/fruit_into_basket.java)
 [62. Unique Paths](https://leetcode.com/problems/unique-paths/)|[Solution](/C++/unique_paths.cpp)
 [Longest substring with at most k distinc characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)|[Solution](/Python/longest_substring_with_K_distinct.py)
 
