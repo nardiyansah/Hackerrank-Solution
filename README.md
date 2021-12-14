@@ -24,6 +24,7 @@ Task | Solution
 ## Hackerrank
 Task | Solution
 -----|---------
+[Recursive Digit Sum](https://www.hackerrank.com/challenges/one-week-preparation-kit-recursive-digit-sum)|[Solution](/Javascript/recursive_digit_sum.js)
 [Grid Challenge](https://www.hackerrank.com/challenges/one-week-preparation-kit-grid-challenge)|[Solution](/Javascript/grid_challenge.js)
 [Caesar's Chiper](https://www.hackerrank.com/challenges/one-week-preparation-kit-caesar-cipher-1)|[Solution](/interview-preparation-kit/caesar_chipper.cpp)
 [Tower Breakers](https://www.hackerrank.com/challenges/one-week-preparation-kit-tower-breakers-1)|[Solution](/interview-preparation-kit/tower_breaker.cpp)
