@@ -17,6 +17,7 @@ Sliding Window| |[designgurus](https://designgurus.org/path-player?courseid=grok
 ## LeetCode
 Task | Solution
 -----|---------
+[Maximum difference between increasing elements](https://leetcode.com/problems/maximum-difference-between-increasing-elements/)|[Solution](/Javascript/maximum_difference_between_increasing_element.js)
 [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)|[Solution](/Javascript/middle_of_the_linked_list.js)
 [Squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/)|[Solution](/Javascript/squares_a_sorted_array.js)
 [Single Number II](https://leetcode.com/problems/single-number-ii/)|[Solution](/Javascript/two_single_number.js)
