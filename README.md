@@ -9,6 +9,7 @@ This repo contains my solution to the problem I solved in Hackerrank or other re
 Concept | Code | Reference
 --------|------|----------
 Heap|[Sample code in javascript](/important-concept/heap.js)|[article from Ankita Masand](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
+Quick Sort|[Sample code in javascript](/important-concept/quick_sort.js)|[guru99](https://www.guru99.com/quicksort-in-javascript.html)
 Bit Manipulation||[youtube video from Hackerrank](https://youtu.be/NLKQEOgBAnw)
 Selection Sort|[Sample code in Ruby](/important-concept/selection_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/selection-sort/)
 Bubble Sort|[Sample code in Ruby](/important-concept/bubble_sort.rb)|[GeeksForGeeks](https://www.geeksforgeeks.org/bubble-sort/)
