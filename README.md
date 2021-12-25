@@ -30,6 +30,7 @@ Task | Solution
 ## Hackerrank
 Task | Solution
 -----|---------
+[Army Game](https://www.hackerrank.com/challenges/game-with-cells/problem)|[Solution](/Mathematics/army_game.js)
 [Truck Tour](https://www.hackerrank.com/challenges/truck-tour/problem)|[Solution](/Javascript/truck_tour.js)
 [New Year Chaos](https://www.hackerrank.com/challenges/one-week-preparation-kit-new-year-chaos)|[Solution](/Javascript/new_year_chaos.js)
 [Recursive Digit Sum](https://www.hackerrank.com/challenges/one-week-preparation-kit-recursive-digit-sum)|[Solution](/Javascript/recursive_digit_sum.js)
