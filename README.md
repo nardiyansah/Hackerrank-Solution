@@ -3,7 +3,7 @@
 This repo contains my solution to the problem I solved in Hackerrank or other resource.
 
 ---
-[my spreadsheet note](https://docs.google.com/spreadsheets/d/19xEi527sSBgCk6AVEOg8zW4wTjqHFE9e0XB2gyDkn4k/edit?usp=sharing)
+[Spreadsheet](https://docs.google.com/spreadsheets/d/19xEi527sSBgCk6AVEOg8zW4wTjqHFE9e0XB2gyDkn4k/edit?usp=sharing) | [Notion](https://luck-atom-384.notion.site/cd11ac99258348a7a9a19f719c8691ff?v=ba042803cdf0412d8a10e23fd239a3f5)
 
 ## Important Concept
 Concept | Code | Reference
