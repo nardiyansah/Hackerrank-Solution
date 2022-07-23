@@ -6,7 +6,7 @@ func canConstruct(ransomNote string, magazine string) bool {
 
 	mapRansom := make(map[rune]int16)
 	mapMagazine := make(map[rune]int16)
-	
+
 	for i := 0; i < len(charRansom); i++ {
 		mapRansom[charRansom[i]] += 1
 	}
@@ -15,7 +15,7 @@ func canConstruct(ransomNote string, magazine string) bool {
 		mapMagazine[charMagazine[i]] += 1
 	}
 
-	for k, _ := range mapRansom {
+	for k := range mapRansom {
 		if mapRansom[k] > mapMagazine[k] {
 			return false
 		}

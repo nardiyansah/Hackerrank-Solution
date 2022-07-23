@@ -1,5 +1,9 @@
 package main
 
+func guess(lower int) int {
+	return 0
+}
+
 func guessNumber(n int) int {
 	lower, upper := 0, n
 

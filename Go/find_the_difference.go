@@ -14,7 +14,7 @@ func findTheDifference(s string, t string) byte {
 
 	var c byte
 
-	for k, _ := range mapT {
+	for k := range mapT {
 		if mapS[k] != mapT[k] {
 			c = byte(k)
 			break
