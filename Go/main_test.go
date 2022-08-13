@@ -29,3 +29,31 @@ func TestThirdMax(t *testing.T) {
 		assert.Equal(t, test.expected, thirdMax(test.input))
 	}
 }
+
+func TestAddStrings(t *testing.T) {
+	tests := []struct {
+		num1     string
+		num2     string
+		expected string
+	}{
+		{
+			"11",
+			"123",
+			"134",
+		},
+		{
+			"456",
+			"77",
+			"533",
+		},
+		{
+			"0",
+			"0",
+			"0",
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, addStrings(test.num1, test.num2))
+	}
+}
