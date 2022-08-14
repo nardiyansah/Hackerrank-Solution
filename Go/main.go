@@ -3,6 +3,7 @@ package main
 import (
 	"sort"
 	"strconv"
+	"strings"
 )
 
 func thirdMax(nums []int) int {
@@ -64,4 +65,16 @@ func addStrings(num1 string, num2 string) string {
 			return res
 		}
 	}
+}
+
+func countSegments(s string) int {
+	sliceS := strings.Split(s, " ")
+	var counter int
+
+	for _, v := range sliceS {
+		if v != "" && v != " " {
+			counter += 1
+		}
+	}
+	return counter
 }

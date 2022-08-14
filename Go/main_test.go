@@ -57,3 +57,35 @@ func TestAddStrings(t *testing.T) {
 		assert.Equal(t, test.expected, addStrings(test.num1, test.num2))
 	}
 }
+
+func TestCountSegments(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected int
+	}{
+		{
+			"Hello, my name is John",
+			5,
+		},
+		{
+			"Hello",
+			1,
+		},
+		{
+			"",
+			0,
+		},
+		{
+			"                ",
+			0,
+		},
+		{
+			", , , ,        a, eaefa",
+			6,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, countSegments(test.input))
+	}
+}
