@@ -78,3 +78,21 @@ func countSegments(s string) int {
 	}
 	return counter
 }
+
+func arrangeCoins(n int) int {
+	var stairs int
+	counter := 1
+
+	for n > 0 {
+		if n >= counter {
+			stairs += 1
+			n = n - counter
+			counter += 1
+		} else {
+			n = -1
+			break
+		}
+	}
+
+	return stairs
+}

@@ -89,3 +89,23 @@ func TestCountSegments(t *testing.T) {
 		assert.Equal(t, test.expected, countSegments(test.input))
 	}
 }
+
+func TestArrangeCoins(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected int
+	}{
+		{
+			5,
+			2,
+		},
+		{
+			8,
+			3,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, arrangeCoins(test.input))
+	}
+}
