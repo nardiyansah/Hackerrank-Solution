@@ -109,3 +109,31 @@ func TestArrangeCoins(t *testing.T) {
 		assert.Equal(t, test.expected, arrangeCoins(test.input))
 	}
 }
+
+func TestFindContentChildren(t *testing.T) {
+	tests := []struct {
+		inputG   []int
+		inputS   []int
+		expected int
+	}{
+		{
+			[]int{1, 2, 3},
+			[]int{1, 1},
+			1,
+		},
+		{
+			[]int{1, 2},
+			[]int{1, 2, 3},
+			2,
+		},
+		{
+			[]int{1, 2, 3},
+			[]int{3},
+			1,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, findContentChildren(test.inputG, test.inputS))
+	}
+}

@@ -96,3 +96,32 @@ func arrangeCoins(n int) int {
 
 	return stairs
 }
+
+func findContentChildren(g []int, s []int) int {
+	sort.Slice(g, func(i, j int) bool {
+		return g[i] < g[j]
+	})
+
+	sort.Slice(s, func(i, j int) bool {
+		return s[i] < s[j]
+	})
+
+	idxG, idxS := 0, 0
+	var res int
+
+	for {
+		if idxG > (len(g)-1) || idxS > (len(s)-1) {
+			break
+		}
+
+		if g[idxG] <= s[idxS] {
+			res += 1
+			idxG += 1
+			idxS += 1
+		} else {
+			idxS += 1
+		}
+	}
+
+	return res
+}
