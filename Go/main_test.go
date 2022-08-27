@@ -137,3 +137,63 @@ func TestFindContentChildren(t *testing.T) {
 		assert.Equal(t, test.expected, findContentChildren(test.inputG, test.inputS))
 	}
 }
+
+func TestLongestPalindrome(t *testing.T) {
+	test := []struct {
+		input    string
+		expected int
+	}{
+		{"abccccdd", 7},
+		{"a", 1},
+		{"ccc", 3},
+		// {"ababababa", 9}, TODO
+	}
+
+	for _, v := range test {
+		assert.Equal(t, v.expected, longestPalindrome(v.input))
+	}
+}
+
+type TestForIsSubsequence struct {
+	s        string
+	t        string
+	expected bool
+}
+
+var isSubsequenceTests = []TestForIsSubsequence{
+	{"abc", "ahbgdc", true},
+	{"axc", "ahbgdx", false},
+	{"", "ahbgdc", true},
+}
+
+func TestIsSubsequence(t *testing.T) {
+	assert := assert.New(t)
+
+	for _, test := range isSubsequenceTests {
+		assert.Equal(test.expected, isSubsequence(test.s, test.t))
+	}
+}
+
+func TestFizzBuzz(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected []string
+	}{
+		{
+			input:    3,
+			expected: []string{"1", "2", "Fizz"},
+		},
+		{
+			input:    5,
+			expected: []string{"1", "2", "Fizz", "4", "Buzz"},
+		},
+		{
+			input:    15,
+			expected: []string{"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, fizzBuzz(test.input))
+	}
+}
