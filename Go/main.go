@@ -294,3 +294,29 @@ func fizzBuzz(n int) []string {
 
 	return out
 }
+
+// https://leetcode.com/problems/repeated-substring-pattern/
+func repeatedSubstringPattern(s string) bool {
+	var subS string = s[:1]
+	lenSubS := 1
+	var res bool
+
+	for lenSubS < len(s) {
+		i, j := 0, lenSubS
+		addJ := j
+		for j <= len(s) {
+			if subS == s[i:j] {
+				if j == len(s) {
+					return true
+				}
+				i = j
+				j = j + addJ
+			} else {
+				break
+			}
+		}
+		lenSubS += 1
+		subS = s[:lenSubS]
+	}
+	return res
+}

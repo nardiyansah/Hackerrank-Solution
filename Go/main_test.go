@@ -197,3 +197,31 @@ func TestFizzBuzz(t *testing.T) {
 		assert.Equal(t, test.expected, fizzBuzz(test.input))
 	}
 }
+
+func TestRepeatedSubstringPattern(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected bool
+	}{
+		{
+			"abab",
+			true,
+		},
+		{
+			"aba",
+			false,
+		},
+		{
+			"abcabcabcabc",
+			true,
+		},
+		{
+			"ababab",
+			true,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, repeatedSubstringPattern(test.input))
+	}
+}
