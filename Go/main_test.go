@@ -225,3 +225,17 @@ func TestRepeatedSubstringPattern(t *testing.T) {
 		assert.Equal(t, test.expected, repeatedSubstringPattern(test.input))
 	}
 }
+
+func TestHammingDistance(t *testing.T) {
+	tests := []struct {
+		x        int
+		y        int
+		expected int
+	}{
+		{1, 4, 2},
+		{3, 1, 1},
+	}
+	for _, test := range tests {
+		assert.Equal(t, test.expected, hammingDistance(test.x, test.y))
+	}
+}

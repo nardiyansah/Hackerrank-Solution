@@ -320,3 +320,18 @@ func repeatedSubstringPattern(s string) bool {
 	}
 	return res
 }
+
+// https://leetcode.com/problems/hamming-distance/
+func hammingDistance(x int, y int) int {
+	var z int = x ^ y
+	var res int
+	for {
+		if z == 0 {
+			return res
+		}
+		if z&1 == 1 {
+			res += 1
+		}
+		z = z >> 1
+	}
+}
