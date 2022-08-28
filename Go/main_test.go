@@ -239,3 +239,36 @@ func TestHammingDistance(t *testing.T) {
 		assert.Equal(t, test.expected, hammingDistance(test.x, test.y))
 	}
 }
+
+func TestIslandPerimeter(t *testing.T) {
+	tests := []struct {
+		input    [][]int
+		expected int
+	}{
+		{
+			[][]int{
+				{0, 1, 0, 0},
+				{1, 1, 1, 0},
+				{0, 1, 0, 0},
+				{1, 1, 0, 0},
+			},
+			16,
+		},
+		{
+			[][]int{
+				{1},
+			},
+			4,
+		},
+		{
+			[][]int{
+				{1, 0},
+			},
+			4,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, islandPerimeter(test.input))
+	}
+}

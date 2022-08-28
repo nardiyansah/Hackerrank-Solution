@@ -335,3 +335,30 @@ func hammingDistance(x int, y int) int {
 		z = z >> 1
 	}
 }
+
+// https://leetcode.com/problems/island-perimeter/
+func islandPerimeter(grid [][]int) int {
+	isLand, neighbour := 0, 0
+	for i := 0; i < len(grid); i++ {
+		for j := 0; j < len(grid[i]); j++ {
+			if grid[i][j] == 1 {
+				isLand += 1
+				up, down, left, right := i-1, i+1, j-1, j+1
+				if up >= 0 && up < len(grid) && grid[up][j] == 1 {
+					neighbour += 1
+				}
+				if down >= 0 && down < len(grid) && grid[down][j] == 1 {
+					neighbour += 1
+				}
+				if left >= 0 && left < len(grid[i]) && grid[i][left] == 1 {
+					neighbour += 1
+				}
+				if right >= 0 && right < len(grid[i]) && grid[i][right] == 1 {
+					neighbour += 1
+				}
+			}
+		}
+	}
+	var res int = (isLand * 4) - neighbour
+	return res
+}
