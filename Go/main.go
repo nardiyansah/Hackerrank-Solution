@@ -362,3 +362,13 @@ func islandPerimeter(grid [][]int) int {
 	var res int = (isLand * 4) - neighbour
 	return res
 }
+
+// https://leetcode.com/problems/number-complement/
+func findComplement(num int) int {
+	pointer := 1
+	for pointer <= num {
+		num = num ^ pointer
+		pointer <<= 1
+	}
+	return num
+}

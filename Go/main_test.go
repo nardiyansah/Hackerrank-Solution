@@ -167,10 +167,10 @@ var isSubsequenceTests = []TestForIsSubsequence{
 }
 
 func TestIsSubsequence(t *testing.T) {
-	assert := assert.New(t)
+	assertions := assert.New(t)
 
 	for _, test := range isSubsequenceTests {
-		assert.Equal(test.expected, isSubsequence(test.s, test.t))
+		assertions.Equal(test.expected, isSubsequence(test.s, test.t))
 	}
 }
 
@@ -270,5 +270,19 @@ func TestIslandPerimeter(t *testing.T) {
 
 	for _, test := range tests {
 		assert.Equal(t, test.expected, islandPerimeter(test.input))
+	}
+}
+
+func TestFindComplement(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected int
+	}{
+		{5, 2},
+		{1, 0},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, findComplement(test.input))
 	}
 }
