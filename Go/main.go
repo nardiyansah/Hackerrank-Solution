@@ -372,3 +372,49 @@ func findComplement(num int) int {
 	}
 	return num
 }
+
+// https://leetcode.com/problems/license-key-formatting/
+func licenseKeyFormatting(s string, k int) string {
+	newS := strings.ReplaceAll(s, "-", "")
+	newKey := ""
+	if len(newS) <= k {
+		return strings.ToUpper(newS)
+	}
+	if len(newS)%k == 0 {
+		i := 0
+		for i < len(newS) {
+			j := i + k
+			if j < len(s) {
+				newKey += strings.ToUpper(newS[i:j])
+			} else {
+				newKey += strings.ToUpper(newS[i:])
+			}
+			i += k
+			if i < len(newS) {
+				newKey += "-"
+			}
+		}
+	} else {
+		i := 0
+		x := 0
+		for len(newS[x:])%k != 0 {
+			x += 1
+		}
+		newKey += strings.ToUpper(newS[i:x])
+		newKey += "-"
+		i = x
+		for i < len(newS) {
+			j := i + k
+			if j < len(s) {
+				newKey += strings.ToUpper(newS[i:j])
+			} else {
+				newKey += strings.ToUpper(newS[i:])
+			}
+			i += k
+			if i < len(newS) {
+				newKey += "-"
+			}
+		}
+	}
+	return newKey
+}
