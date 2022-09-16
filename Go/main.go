@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"sort"
 	"strconv"
 	"strings"
@@ -417,4 +418,21 @@ func licenseKeyFormatting(s string, k int) string {
 		}
 	}
 	return newKey
+}
+
+// https://leetcode.com/problems/construct-the-rectangle/
+func constructRectangle(area int) []int {
+	L, W := int(math.Sqrt(float64(area))), int(math.Sqrt(float64(area)))
+	tempArea := L * W
+
+	for tempArea != area {
+		if tempArea < area {
+			L += 1
+		} else {
+			W -= 1
+		}
+		tempArea = L * W
+	}
+
+	return []int{L, W}
 }

@@ -329,3 +329,27 @@ func TestLicenseKeyFormatting(t *testing.T) {
 		assert.Equal(t, test.expected, licenseKeyFormatting(test.s, test.k))
 	}
 }
+
+func TestConstructRectangle(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected []int
+	}{
+		{
+			4,
+			[]int{2, 2},
+		},
+		{
+			37,
+			[]int{37, 1},
+		},
+		{
+			122122,
+			[]int{427, 286},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, constructRectangle(test.input))
+	}
+}
