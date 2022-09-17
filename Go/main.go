@@ -436,3 +436,28 @@ func constructRectangle(area int) []int {
 
 	return []int{L, W}
 }
+
+// https://leetcode.com/problems/teemo-attacking/
+func findPoisonedDuration(timeSeries []int, duration int) int {
+	lastEndTimePoison := 0
+	totalPoisonedSecond := 0
+
+	for _, attackTime := range timeSeries {
+		if attackTime == 0 {
+			lastEndTimePoison = attackTime + duration - 1
+			totalPoisonedSecond += duration
+			continue
+		}
+		if attackTime <= lastEndTimePoison {
+			remainTime := int(math.Abs(float64(lastEndTimePoison-attackTime))) + 1
+			totalPoisonedSecond -= remainTime
+			totalPoisonedSecond += duration
+			lastEndTimePoison = attackTime + duration - 1
+			continue
+		}
+		lastEndTimePoison = attackTime + duration - 1
+		totalPoisonedSecond += duration
+	}
+
+	return totalPoisonedSecond
+}
