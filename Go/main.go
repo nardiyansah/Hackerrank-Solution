@@ -461,3 +461,29 @@ func findPoisonedDuration(timeSeries []int, duration int) int {
 
 	return totalPoisonedSecond
 }
+
+// https://leetcode.com/problems/next-greater-element-i/
+func nextGreaterElement(nums1 []int, nums2 []int) []int {
+	ans := make([]int, 0)
+
+	for _, val1 := range nums1 {
+		for i, val2 := range nums2 {
+			if val1 == val2 {
+				if i+1 == len(nums2) {
+					ans = append(ans, -1)
+				}
+				for j := i + 1; j < len(nums2); j++ {
+					if j+1 == len(nums2) && nums2[j] <= val2 {
+						ans = append(ans, -1)
+						break
+					}
+					if nums2[j] > val2 {
+						ans = append(ans, nums2[j])
+						break
+					}
+				}
+			}
+		}
+	}
+	return ans
+}

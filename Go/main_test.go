@@ -391,3 +391,26 @@ func TestFindPoisonedDuration(t *testing.T) {
 		assert.Equal(t, test.expected, findPoisonedDuration(test.timeSeries, test.duration))
 	}
 }
+
+func TestNextGreaterElement(t *testing.T) {
+	tests := []struct {
+		nums1    []int
+		nums2    []int
+		expected []int
+	}{
+		{
+			[]int{4, 1, 2},
+			[]int{1, 3, 4, 2},
+			[]int{-1, 3, -1},
+		},
+		{
+			[]int{2, 4},
+			[]int{1, 2, 3, 4},
+			[]int{3, -1},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, nextGreaterElement(test.nums1, test.nums2))
+	}
+}
