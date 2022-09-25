@@ -487,3 +487,27 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 	}
 	return ans
 }
+
+// https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+func toHex(num int) string {
+	listBiner := []int{15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0}
+	listStr := []string{"f", "e", "d", "c", "b", "a", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"}
+
+	hex := ""
+
+	if num == 0 {
+		return "0"
+	}
+
+	for num != 0 && len(hex) < 8 {
+		for i, v := range listBiner {
+			if num&v == v {
+				hex = listStr[i] + hex
+				num >>= 4
+				break
+			}
+		}
+	}
+
+	return hex
+}

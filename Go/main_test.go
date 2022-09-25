@@ -414,3 +414,23 @@ func TestNextGreaterElement(t *testing.T) {
 		assert.Equal(t, test.expected, nextGreaterElement(test.nums1, test.nums2))
 	}
 }
+
+func TestToHex(t *testing.T) {
+	tests := []struct {
+		num         int
+		expectedHex string
+	}{
+		{
+			26,
+			"1a",
+		},
+		{
+			-1,
+			"ffffffff",
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expectedHex, toHex(test.num))
+	}
+}
