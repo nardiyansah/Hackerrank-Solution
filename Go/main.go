@@ -511,3 +511,55 @@ func toHex(num int) string {
 
 	return hex
 }
+
+// https://leetcode.com/problems/keyboard-row/
+func findWords(words []string) []string {
+	keyboards := map[int]int{
+		int('q'): 1,
+		int('w'): 1,
+		int('e'): 1,
+		int('r'): 1,
+		int('t'): 1,
+		int('y'): 1,
+		int('u'): 1,
+		int('i'): 1,
+		int('o'): 1,
+		int('p'): 1,
+		int('a'): 2,
+		int('s'): 2,
+		int('d'): 2,
+		int('f'): 2,
+		int('g'): 2,
+		int('h'): 2,
+		int('j'): 2,
+		int('k'): 2,
+		int('l'): 2,
+		int('z'): 3,
+		int('x'): 3,
+		int('c'): 3,
+		int('v'): 3,
+		int('b'): 3,
+		int('n'): 3,
+		int('m'): 3,
+	}
+
+	wordsLower := make([]string, 0)
+	for _, v := range words {
+		wordsLower = append(wordsLower, strings.ToLower(v))
+	}
+
+	result := make([]string, 0)
+	for idxW, w := range wordsLower {
+		temp := keyboards[int(w[0])]
+		for i, c := range w {
+			if temp != keyboards[int(c)] {
+				break
+			}
+			if i == len(w)-1 {
+				result = append(result, words[idxW])
+			}
+		}
+	}
+
+	return result
+}

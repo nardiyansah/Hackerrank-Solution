@@ -434,3 +434,27 @@ func TestToHex(t *testing.T) {
 		assert.Equal(t, test.expectedHex, toHex(test.num))
 	}
 }
+
+func TestFindWords(t *testing.T) {
+	tests := []struct {
+		input    []string
+		expected []string
+	}{
+		{
+			[]string{"Hello", "Alaska", "Dad", "Peace"},
+			[]string{"Alaska", "Dad"},
+		},
+		{
+			[]string{"omk"},
+			[]string{},
+		},
+		{
+			[]string{"adsdf", "sfd"},
+			[]string{"adsdf", "sfd"},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, findWords(test.input))
+	}
+}
