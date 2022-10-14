@@ -563,3 +563,47 @@ func findWords(words []string) []string {
 
 	return result
 }
+
+// https://leetcode.com/problems/find-mode-in-binary-search-tree/
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func findMode(root *TreeNode) []int {
+	var result []int
+	var arrNode []*TreeNode
+	var maxOccur int = 0
+	var mapOccur = make(map[int]int, 0)
+	arrNode = append(arrNode, root)
+
+	for len(arrNode) > 0 {
+		curr := arrNode[0]
+		arrNode = arrNode[1:]
+		val := curr.Val
+		mapOccur[val] += 1
+		if mapOccur[val] > maxOccur {
+			result = []int{val}
+			maxOccur = mapOccur[val]
+		} else if mapOccur[val] == maxOccur {
+			isContain := false
+			for _, v := range result {
+				if val == v {
+					isContain = true
+					break
+				}
+			}
+			if !isContain {
+				result = append(result, val)
+			}
+		}
+		if curr.Right != nil {
+			arrNode = append(arrNode, curr.Right)
+		}
+		if curr.Left != nil {
+			arrNode = append(arrNode, curr.Left)
+		}
+	}
+	return result
+}
