@@ -458,3 +458,19 @@ func TestFindWords(t *testing.T) {
 		assert.Equal(t, test.expected, findWords(test.input))
 	}
 }
+
+func TestConvertToBase7(t *testing.T) {
+	tests := []struct {
+		input  int
+		output string
+	}{
+		{
+			100,
+			"202",
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.output, convertToBase7(test.input))
+	}
+}

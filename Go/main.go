@@ -607,3 +607,8 @@ func findMode(root *TreeNode) []int {
 	}
 	return result
 }
+
+// https://leetcode.com/problems/base-7/
+func convertToBase7(num int) string {
+	return strconv.FormatInt(int64(num), 7)
+}
