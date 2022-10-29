@@ -474,3 +474,23 @@ func TestConvertToBase7(t *testing.T) {
 		assert.Equal(t, test.output, convertToBase7(test.input))
 	}
 }
+
+func TestFindRelativeRanks(t *testing.T) {
+	tests := []struct {
+		input    []int
+		expected []string
+	}{
+		{
+			[]int{5, 4, 3, 2, 1},
+			[]string{"Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"},
+		},
+		{
+			[]int{10, 3, 8, 9, 4},
+			[]string{"Gold Medal", "5", "Bronze Medal", "Silver Medal", "4"},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, findRelativeRanks(test.input))
+	}
+}

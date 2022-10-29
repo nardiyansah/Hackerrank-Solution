@@ -612,3 +612,69 @@ func findMode(root *TreeNode) []int {
 func convertToBase7(num int) string {
 	return strconv.FormatInt(int64(num), 7)
 }
+
+// https://leetcode.com/problems/relative-ranks/
+func findRelativeRanks(score []int) []string {
+	var res []string
+	gold := 0
+	silver := 0
+	bronze := 0
+
+	for _, v := range score {
+		if v > gold {
+			bronze = silver
+			silver = gold
+			gold = v
+			continue
+		}
+
+		if v > silver {
+			bronze = silver
+			silver = v
+			continue
+		}
+
+		if v > bronze {
+			bronze = v
+			continue
+		}
+	}
+
+	orgScore := make([]int, len(score))
+
+	copy(orgScore, score)
+
+	sort.Slice(score, func(i, j int) bool {
+		return score[j] < score[i]
+	})
+
+	placement := make(map[int]string)
+
+	for i, v := range score {
+		if i == 0 || i == 1 || i == 2 {
+			continue
+		}
+		placement[v] = strconv.Itoa(i + 1)
+	}
+
+	for _, v := range orgScore {
+		if v == gold {
+			res = append(res, "Gold Medal")
+			continue
+		}
+
+		if v == silver {
+			res = append(res, "Silver Medal")
+			continue
+		}
+
+		if v == bronze {
+			res = append(res, "Bronze Medal")
+			continue
+		}
+
+		res = append(res, placement[v])
+	}
+
+	return res
+}
