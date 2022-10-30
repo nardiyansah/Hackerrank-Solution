@@ -512,6 +512,10 @@ func TestCheckPerfectNumber(t *testing.T) {
 			2016,
 			false,
 		},
+		{
+			1,
+			false,
+		},
 	}
 
 	for _, test := range tests {
