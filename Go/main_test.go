@@ -494,3 +494,23 @@ func TestFindRelativeRanks(t *testing.T) {
 		assert.Equal(t, test.expected, findRelativeRanks(test.input))
 	}
 }
+
+func TestCheckPerfectNumber(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected bool
+	}{
+		{
+			28,
+			true,
+		},
+		{
+			7,
+			false,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, checkPerfectNumber(test.input))
+	}
+}
