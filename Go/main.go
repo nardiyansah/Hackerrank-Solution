@@ -681,16 +681,15 @@ func findRelativeRanks(score []int) []string {
 
 // https://leetcode.com/problems/perfect-number/
 func checkPerfectNumber(num int) bool {
-	var sum int
+	var sum int = 1
 
-	for i := 1; i <= num/2; i++ {
+	for i := 2; i <= int(math.Sqrt(float64(num))); i++ {
 		if num%i == 0 {
+			anotherDivisor := num / i
 			sum += i
-		}
-		if sum == num {
-			return true
+			sum += anotherDivisor
 		}
 	}
 
-	return false
+	return sum == num
 }
