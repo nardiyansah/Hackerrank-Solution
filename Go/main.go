@@ -719,3 +719,35 @@ func fib(n int) int {
 
 	return val
 }
+
+// https://leetcode.com/problems/detect-capital/
+func detectCapitalUse(word string) bool {
+	// A-Z -> 65-90
+	// a-z -> 97-122
+	firstCapitalLetter := word[0] >= 65 && word[0] <= 90
+	isAllCapital := true
+	isAllLower := true
+	isAllLoweExceptFirst := true
+
+	for i, w := range word {
+		isAllCapital = isAllCapital && w >= 65 && w <= 90
+		isAllLower = isAllLower && w >= 97 && w <= 122
+		if i != 0 {
+			isAllLoweExceptFirst = isAllLoweExceptFirst && w >= 97 && w <= 122
+		}
+	}
+
+	if isAllLower {
+		return true
+	}
+
+	if isAllCapital {
+		return true
+	}
+
+	if firstCapitalLetter && isAllLoweExceptFirst {
+		return true
+	}
+
+	return false
+}

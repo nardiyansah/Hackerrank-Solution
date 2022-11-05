@@ -538,3 +538,27 @@ func TestFib(t *testing.T) {
 		assert.Equal(t, test.expected, fib(test.input))
 	}
 }
+
+func TestDetectCapitalUse(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected bool
+	}{
+		{
+			"USA",
+			true,
+		},
+		{
+			"FlaG",
+			false,
+		},
+		{
+			"Leetcode",
+			true,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, detectCapitalUse(test.input))
+	}
+}
