@@ -699,7 +699,13 @@ func checkPerfectNumber(num int) bool {
 }
 
 // https://leetcode.com/problems/fibonacci-number/
+var memoFibonacci = make(map[int]int)
+
 func fib(n int) int {
+	if val, ok := memoFibonacci[n]; ok {
+		return val
+	}
+
 	if n <= 0 {
 		return 0
 	}
@@ -708,5 +714,8 @@ func fib(n int) int {
 		return 1
 	}
 
-	return fib(n-1) + fib(n-2)
+	val := fib(n-1) + fib(n-2)
+	memoFibonacci[n] = val
+
+	return val
 }
