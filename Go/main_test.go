@@ -522,3 +522,19 @@ func TestCheckPerfectNumber(t *testing.T) {
 		assert.Equal(t, test.expected, checkPerfectNumber(test.input))
 	}
 }
+
+func TestFib(t *testing.T) {
+	tests := []struct {
+		input    int
+		expected int
+	}{
+		{
+			2,
+			1,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, fib(test.input))
+	}
+}
