@@ -751,3 +751,11 @@ func detectCapitalUse(word string) bool {
 
 	return false
 }
+
+// https://leetcode.com/problems/longest-uncommon-subsequence-i/
+func findLUSlength(a string, b string) int {
+	if a == b {
+		return -1
+	}
+	return 0
+}

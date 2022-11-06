@@ -562,3 +562,21 @@ func TestDetectCapitalUse(t *testing.T) {
 		assert.Equal(t, test.expected, detectCapitalUse(test.input))
 	}
 }
+
+func TestFindLUSlength(t *testing.T) {
+	tests := []struct {
+		a        string
+		b        string
+		expected int
+	}{
+		{
+			"aaa",
+			"aaa",
+			-1,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, findLUSlength(test.a, test.b))
+	}
+}
