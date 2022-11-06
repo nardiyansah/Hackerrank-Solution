@@ -574,6 +574,11 @@ func TestFindLUSlength(t *testing.T) {
 			"aaa",
 			-1,
 		},
+		{
+			"aaa",
+			"bbb",
+			3,
+		},
 	}
 
 	for _, test := range tests {
