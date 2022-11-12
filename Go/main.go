@@ -759,3 +759,34 @@ func findLUSlength(a string, b string) int {
 	}
 	return int(math.Max(float64(len(a)), float64(len(b))))
 }
+
+// https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+func getMinimumDifference(root *TreeNode) int {
+	if root == nil {
+		return int(math.Inf(1))
+	}
+
+	minNodeLeft := getMinimumDifference(root.Left)
+	minNodeRight := getMinimumDifference(root.Right)
+
+	var left int
+	if root.Left == nil {
+		left = root.Val
+	} else {
+		left = int(math.Abs(float64(root.Val - root.Left.Val)))
+	}
+
+	var right int
+	if root.Right == nil {
+		right = root.Val
+	} else {
+		right = int(math.Abs(float64(root.Val - root.Right.Val)))
+	}
+
+	var min int
+	min = int(math.Min(float64(left), float64(right)))
+	min = int(math.Min(float64(min), float64(minNodeLeft)))
+	min = int(math.Min(float64(min), float64(minNodeRight)))
+
+	return min
+}
