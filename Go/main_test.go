@@ -585,3 +585,26 @@ func TestFindLUSlength(t *testing.T) {
 		assert.Equal(t, test.expected, findLUSlength(test.a, test.b))
 	}
 }
+
+func TestReverseStr(t *testing.T) {
+	tests := []struct {
+		inputS   string
+		inputK   int
+		expected string
+	}{
+		{
+			"abcdefg",
+			2,
+			"bacdfeg",
+		},
+		{
+			"abcd",
+			2,
+			"bacd",
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, reverseStr(test.inputS, test.inputK))
+	}
+}

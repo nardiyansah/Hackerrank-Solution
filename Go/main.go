@@ -790,3 +790,18 @@ func getMinimumDifference(root *TreeNode) int {
 
 	return min
 }
+
+// https://leetcode.com/problems/reverse-string-ii/
+func reverseStr(s string, k int) string {
+	r := []rune(s)
+
+	for left := 0; left < len(r); left += 2 * k {
+		for i, j := left, int(math.Min(float64(left+k-1), float64(len(r)-1))); i < j; {
+			r[i], r[j] = r[j], r[i]
+			i++
+			j--
+		}
+	}
+
+	return string(r)
+}
