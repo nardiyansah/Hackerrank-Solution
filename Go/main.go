@@ -805,3 +805,25 @@ func reverseStr(s string, k int) string {
 
 	return string(r)
 }
+
+// https://leetcode.com/problems/diameter-of-binary-tree/
+var max int
+
+func diameterOfBinaryTree(root *TreeNode) int {
+	maxDepth(root)
+	newMax := max
+	max = 0
+	return newMax
+}
+
+func maxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	left := maxDepth(root.Left)
+	right := maxDepth(root.Right)
+	max = int(math.Max(float64(max), float64(left+right)))
+
+	return int(math.Max(float64(left), float64(right))) + 1
+}
