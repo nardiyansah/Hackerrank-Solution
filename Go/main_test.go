@@ -608,3 +608,23 @@ func TestReverseStr(t *testing.T) {
 		assert.Equal(t, test.expected, reverseStr(test.inputS, test.inputK))
 	}
 }
+
+func TestCheckRecord(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected bool
+	}{
+		{
+			"PPALLP",
+			true,
+		},
+		{
+			"PPALLL",
+			false,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, checkRecord(test.input))
+	}
+}

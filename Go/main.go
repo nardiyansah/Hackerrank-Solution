@@ -827,3 +827,42 @@ func maxDepth(root *TreeNode) int {
 
 	return int(math.Max(float64(left), float64(right))) + 1
 }
+
+// https://leetcode.com/problems/student-attendance-record-i/
+func checkRecord(s string) bool {
+	absenFewThan2Days := true
+	lateFewThan3ConsecutiveDays := true
+	countAbsent := 0
+	countLate := 0
+
+	criteria := []rune("ALP")
+	ch := []rune(s)
+
+	for _, c := range ch {
+		if absenFewThan2Days {
+			if c == criteria[0] {
+				countAbsent += 1
+				if countAbsent >= 2 {
+					absenFewThan2Days = false
+				}
+			}
+		} else {
+			return false
+		}
+
+		if lateFewThan3ConsecutiveDays {
+			if c == criteria[1] {
+				countLate += 1
+				if countLate >= 3 {
+					lateFewThan3ConsecutiveDays = false
+				}
+			} else {
+				countLate = 0
+			}
+		} else {
+			return false
+		}
+	}
+
+	return absenFewThan2Days && lateFewThan3ConsecutiveDays
+}
