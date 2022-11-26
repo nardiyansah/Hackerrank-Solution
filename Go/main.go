@@ -866,3 +866,24 @@ func checkRecord(s string) bool {
 
 	return absenFewThan2Days && lateFewThan3ConsecutiveDays
 }
+
+// https://leetcode.com/problems/reverse-words-in-a-string-iii/
+func reverseWords(s string) string {
+	splitS := strings.Split(s, " ")
+	var newSplitS []string
+
+	for _, splt := range splitS {
+		r := []rune(splt)
+		if len(r) < 1 {
+			continue
+		}
+		i, j := 0, len(r)-1
+		for i < j {
+			r[i], r[j] = r[j], r[i]
+			i++
+			j--
+		}
+		newSplitS = append(newSplitS, string(r))
+	}
+	return strings.Join(newSplitS, " ")
+}

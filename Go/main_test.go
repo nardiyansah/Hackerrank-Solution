@@ -628,3 +628,19 @@ func TestCheckRecord(t *testing.T) {
 		assert.Equal(t, test.expected, checkRecord(test.input))
 	}
 }
+
+func TestReverseWords(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected string
+	}{
+		{
+			"Let's take LeetCode contest",
+			"s'teL ekat edoCteeL tsetnoc",
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, reverseWords(test.input))
+	}
+}
