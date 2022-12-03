@@ -810,19 +810,19 @@ func reverseStr(s string, k int) string {
 var max int
 
 func diameterOfBinaryTree(root *TreeNode) int {
-	maxDepth(root)
+	maxDepth_v1(root)
 	newMax := max
 	max = 0
 	return newMax
 }
 
-func maxDepth(root *TreeNode) int {
+func maxDepth_v1(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
 
-	left := maxDepth(root.Left)
-	right := maxDepth(root.Right)
+	left := maxDepth_v1(root.Left)
+	right := maxDepth_v1(root.Right)
 	max = int(math.Max(float64(max), float64(left+right)))
 
 	return int(math.Max(float64(left), float64(right))) + 1
@@ -886,4 +886,34 @@ func reverseWords(s string) string {
 		newSplitS = append(newSplitS, string(r))
 	}
 	return strings.Join(newSplitS, " ")
+}
+
+// https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+type Node struct {
+	Val      int
+	Children []*Node
+}
+
+func maxDepth(root *Node) int {
+	if root == nil {
+		return 0
+	}
+
+	max := 0
+
+	for _, v := range root.Children {
+		temp := maxDepth(v)
+		if temp > max {
+			max = temp
+		}
+	}
+
+	return 1 + max
 }
