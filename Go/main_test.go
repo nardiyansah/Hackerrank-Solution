@@ -644,3 +644,19 @@ func TestReverseWords(t *testing.T) {
 		assert.Equal(t, test.expected, reverseWords(test.input))
 	}
 }
+
+func TestArrayPairSum(t *testing.T) {
+	tests := []struct {
+		input    []int
+		expected int
+	}{
+		{
+			[]int{1, 4, 3, 2},
+			4,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, arrayPairSum(test.input))
+	}
+}

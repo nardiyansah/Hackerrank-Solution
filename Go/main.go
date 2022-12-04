@@ -917,3 +917,17 @@ func maxDepth(root *Node) int {
 
 	return 1 + max
 }
+
+// https://leetcode.com/problems/array-partition/
+func arrayPairSum(nums []int) int {
+	sort.Ints(nums)
+	var max int
+
+	for i, v := range nums {
+		if i%2 == 0 {
+			max += v
+		}
+	}
+
+	return max
+}
