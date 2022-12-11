@@ -931,3 +931,47 @@ func arrayPairSum(nums []int) int {
 
 	return max
 }
+
+//https://leetcode.com/problems/binary-tree-tilt/
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+func findTilt(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	return findDiffTilt(root) + findTilt(root.Left) + findTilt(root.Right)
+}
+
+func findDiffTilt(root *TreeNode) int {
+	left := sumTreeNode(root.Left)
+	right := sumTreeNode(root.Right)
+
+	if left > right {
+		return left - right
+	} else {
+		return right - left
+	}
+}
+
+var mapSumTreeNode = make(map[*TreeNode]int)
+
+func sumTreeNode(root *TreeNode) int {
+	_, ok := mapSumTreeNode[root]
+	if ok {
+		return mapSumTreeNode[root]
+	}
+
+	if root == nil {
+		return 0
+	}
+	sum := root.Val + sumTreeNode(root.Left) + sumTreeNode(root.Right)
+	mapSumTreeNode[root] = sum
+	return sum
+}
