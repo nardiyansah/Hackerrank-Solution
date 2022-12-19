@@ -660,3 +660,19 @@ func TestArrayPairSum(t *testing.T) {
 		assert.Equal(t, test.expected, arrayPairSum(test.input))
 	}
 }
+
+//func TestMatrixReshape(t *testing.T) {
+//	tests := []struct {
+//		inputMat [][]int
+//		inputR   int
+//		inputC   int
+//		expected [][]int
+//	}{
+//		{
+//			[]int{
+//				{1, 2},
+//				{3, 4},
+//			},
+//		},
+//	}
+//}

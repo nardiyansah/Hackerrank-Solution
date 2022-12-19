@@ -975,3 +975,32 @@ func sumTreeNode(root *TreeNode) int {
 	mapSumTreeNode[root] = sum
 	return sum
 }
+
+// https://leetcode.com/problems/reshape-the-matrix/
+func matrixReshape(mat [][]int, r int, c int) [][]int {
+	if (r * c) != (len(mat) * len(mat[0])) {
+		return mat
+	}
+
+	result := make([][]int, r)
+	// from seed matrix
+	//i, j := len(mat)-1, len(mat[0])-1
+	// for result matrix
+	x, y := 0, 0
+
+	for _, a := range mat {
+		for _, b := range a {
+			if y < c {
+				result[x] = append(result[x], b)
+				y += 1
+			} else {
+				x += 1
+				y = 0
+				result[x] = append(result[x], b)
+				y += 1
+			}
+		}
+	}
+
+	return result
+}
