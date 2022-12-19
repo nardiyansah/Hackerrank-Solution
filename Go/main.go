@@ -1024,3 +1024,18 @@ func isIdentical(root *TreeNode, subRoot *TreeNode) bool {
 
 	return root.Val == subRoot.Val && isIdentical(root.Left, subRoot.Left) && isIdentical(root.Right, subRoot.Right)
 }
+
+func distributeCandies(candyType []int) int {
+	doctorAdvised := len(candyType) / 2
+	manyType := make(map[int]bool, 0)
+
+	for _, v := range candyType {
+		manyType[v] = true
+	}
+
+	if len(manyType) < doctorAdvised {
+		return len(manyType)
+	} else {
+		return doctorAdvised
+	}
+}
