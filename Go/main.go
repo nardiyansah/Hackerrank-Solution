@@ -1004,3 +1004,23 @@ func matrixReshape(mat [][]int, r int, c int) [][]int {
 
 	return result
 }
+
+func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
+	if root == nil || subRoot == nil {
+		return root == subRoot
+	}
+
+	if root.Val == subRoot.Val && isIdentical(root, subRoot) {
+		return true
+	}
+
+	return isSubtree(root.Left, subRoot) || isSubtree(root.Right, subRoot)
+}
+
+func isIdentical(root *TreeNode, subRoot *TreeNode) bool {
+	if root == nil || subRoot == nil {
+		return root == subRoot
+	}
+
+	return root.Val == subRoot.Val && isIdentical(root.Left, subRoot.Left) && isIdentical(root.Right, subRoot.Right)
+}
