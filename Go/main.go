@@ -1039,3 +1039,49 @@ func distributeCandies(candyType []int) int {
 		return doctorAdvised
 	}
 }
+
+// https://leetcode.com/problems/n-ary-tree-preorder-traversal/description/
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+func preorder(root *Node) []int {
+	if root == nil {
+		return []int{}
+	}
+
+	res := []int{root.Val}
+	for _, node := range root.Children {
+		res = append(res, preorder(node)...)
+	}
+
+	return res
+}
+
+//https://leetcode.com/problems/n-ary-tree-postorder-traversal/
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Children []*Node
+ * }
+ */
+
+func postorder(root *Node) []int {
+	if root == nil {
+		return []int{}
+	}
+
+	var res []int
+
+	for _, node := range root.Children {
+		res = append(res, postorder(node)...)
+	}
+
+	res = append(res, root.Val)
+
+	return res
+}
