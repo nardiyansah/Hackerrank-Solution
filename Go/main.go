@@ -1085,3 +1085,23 @@ func postorder(root *Node) []int {
 
 	return res
 }
+
+// https://leetcode.com/problems/range-addition-ii/description/
+func maxCount(m int, n int, ops [][]int) int {
+	if len(ops) == 0 {
+		return m * n
+	}
+
+	maxR, maxC := 1000000, 1000000
+
+	for _, op := range ops {
+		if op[0] < maxR {
+			maxR = op[0]
+		}
+		if op[1] < maxC {
+			maxC = op[1]
+		}
+	}
+
+	return maxR * maxC
+}
