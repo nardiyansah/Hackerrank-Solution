@@ -661,18 +661,20 @@ func TestArrayPairSum(t *testing.T) {
 	}
 }
 
-//func TestMatrixReshape(t *testing.T) {
-//	tests := []struct {
-//		inputMat [][]int
-//		inputR   int
-//		inputC   int
-//		expected [][]int
-//	}{
-//		{
-//			[]int{
-//				{1, 2},
-//				{3, 4},
-//			},
-//		},
-//	}
-//}
+func TestCanPlaceFlowers(t *testing.T) {
+	tests := []struct {
+		flowerbed []int
+		n         int
+		expected  bool
+	}{
+		{
+			[]int{0, 0, 1, 0, 0},
+			1,
+			true,
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.expected, canPlaceFlowers(test.flowerbed, test.n))
+	}
+}

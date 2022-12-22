@@ -1105,3 +1105,36 @@ func maxCount(m int, n int, ops [][]int) int {
 
 	return maxR * maxC
 }
+
+// https://leetcode.com/problems/can-place-flowers/
+func canPlaceFlowers(flowerbed []int, n int) bool {
+	if len(flowerbed) == 1 && flowerbed[0] == 0 && n == 1 {
+		return true
+	}
+
+	for i := 0; i < len(flowerbed); i++ {
+		if n == 0 {
+			break
+		}
+		if flowerbed[i] == 0 {
+			if i == 0 {
+				if flowerbed[i+1] == 0 {
+					flowerbed[i] = 1
+					n -= 1
+				}
+			} else if i == len(flowerbed)-1 {
+				if flowerbed[i-1] == 0 {
+					flowerbed[i] = 1
+					n -= 1
+				}
+			} else {
+				if flowerbed[i-1] == 0 && flowerbed[i+1] == 0 {
+					flowerbed[i] = 1
+					n -= 1
+				}
+			}
+		}
+	}
+
+	return n == 0
+}
