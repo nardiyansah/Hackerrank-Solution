@@ -1138,3 +1138,34 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 
 	return n == 0
 }
+
+// https://leetcode.com/problems/construct-string-from-binary-tree
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func tree2str(root *TreeNode) string {
+	if root == nil {
+		return ""
+	}
+
+	res := strconv.Itoa(root.Val)
+
+	if root.Left != nil || root.Right != nil {
+		res += "("
+		res += tree2str(root.Left)
+		res += ")"
+	}
+
+	if root.Right != nil {
+		res += "("
+		res += tree2str(root.Right)
+		res += ")"
+	}
+
+	return res
+}
