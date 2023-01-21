@@ -1169,3 +1169,59 @@ func tree2str(root *TreeNode) string {
 
 	return res
 }
+
+// https://leetcode.com/problems/merge-two-binary-trees/
+func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode {
+	if root1 == nil && root2 == nil {
+		return nil
+	}
+
+	var mergedTree *TreeNode
+
+	mergedTree = combineTree(root1, root2)
+
+	var l1, l2, r1, r2 *TreeNode
+	if root1 != nil {
+		l1 = root1.Left
+	} else {
+		l1 = nil
+	}
+	if root2 != nil {
+		l2 = root2.Left
+	} else {
+		l2 = nil
+	}
+	if root1 != nil {
+		r1 = root1.Right
+	} else {
+		r1 = nil
+	}
+	if root2 != nil {
+		r2 = root2.Right
+	} else {
+		r2 = nil
+	}
+
+	mergedTree.Left = mergeTrees(l1, l2)
+	mergedTree.Right = mergeTrees(r1, r2)
+
+	return mergedTree
+}
+
+func combineTree(root1 *TreeNode, root2 *TreeNode) *TreeNode {
+	if root1 == nil && root2 == nil {
+		return nil
+	}
+
+	var mergedNode TreeNode
+
+	if root1 != nil && root2 != nil {
+		mergedNode.Val = root1.Val + root2.Val
+	} else if root1 != nil {
+		mergedNode.Val = root1.Val
+	} else {
+		mergedNode.Val = root2.Val
+	}
+
+	return &mergedNode
+}
