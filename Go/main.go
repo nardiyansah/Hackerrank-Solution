@@ -1225,3 +1225,61 @@ func combineTree(root1 *TreeNode, root2 *TreeNode) *TreeNode {
 
 	return &mergedNode
 }
+
+func maximumProduct(nums []int) int {
+	var max int = -999999999
+
+	if len(nums) < 5 {
+		sort.Ints(nums)
+		if len(nums) == 3 {
+			return nums[0] * nums[1] * nums[2]
+		} else if len(nums) == 4 {
+			a := nums[0] * nums[1] * nums[3]
+			b := nums[1] * nums[2] * nums[3]
+
+			if a > b {
+				return a
+			} else {
+				return b
+			}
+		}
+	}
+
+	list := make([]int, 0)
+
+	for _, n := range nums {
+		if len(list) < 5 {
+			list = append(list, n)
+			sort.Ints(list)
+		} else {
+			if n < list[0] {
+				list[1] = list[0]
+				list[0] = n
+			} else if n < list[1] {
+				list[1] = n
+			}
+
+			if n > list[4] {
+				list[2] = list[3]
+				list[3] = list[4]
+				list[4] = n
+			} else if n > list[3] {
+				list[2] = list[3]
+				list[3] = n
+			} else if n > list[2] {
+				list[2] = n
+			}
+		}
+	}
+
+	com1 := list[0] * list[1] * list[4]
+	com2 := list[4] * list[3] * list[2]
+
+	if com1 > com2 {
+		max = com1
+	} else {
+		max = com2
+	}
+
+	return max
+}

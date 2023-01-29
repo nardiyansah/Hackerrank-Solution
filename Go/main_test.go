@@ -678,3 +678,18 @@ func TestCanPlaceFlowers(t *testing.T) {
 		assert.Equal(t, test.expected, canPlaceFlowers(test.flowerbed, test.n))
 	}
 }
+
+func TestMaximumProduct(t *testing.T) {
+	tests := []struct {
+		input  []int
+		output int
+	}{
+		{[]int{-100, -98, -1, 2, 3, 4}, 39200},
+		{[]int{-1, -2, -3, -4}, -6},
+		{[]int{1, 2, 3}, 6},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.output, maximumProduct(test.input))
+	}
+}
