@@ -1283,3 +1283,40 @@ func maximumProduct(nums []int) int {
 
 	return max
 }
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func averageOfLevels(root *TreeNode) []float64 {
+	var temp, exeNode []*TreeNode
+	var res []float64
+	temp = append(temp, root)
+
+	for len(temp) > 0 {
+		exeNode = temp
+		temp = []*TreeNode{}
+		lExenode := len(exeNode)
+		var sum = 0
+
+		for _, t := range exeNode {
+			if t.Left != nil {
+				temp = append(temp, t.Left)
+			}
+			if t.Right != nil {
+				temp = append(temp, t.Right)
+			}
+			sum += t.Val
+		}
+
+		avg := float64(sum) / float64(lExenode)
+
+		res = append(res, avg)
+	}
+
+	return res
+}
