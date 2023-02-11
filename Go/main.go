@@ -1338,3 +1338,25 @@ func findMaxAverage(nums []int, k int) float64 {
 
 	return maxAverage
 }
+
+// https://leetcode.com/problems/set-mismatch/
+func findErrorNums(nums []int) []int {
+	var res []int
+	number := make(map[int]int)
+
+	for _, v := range nums {
+		if _, ok := number[v]; ok {
+			res = append(res, v)
+		} else {
+			number[v] = v
+		}
+	}
+
+	for i := 1; i <= len(nums); i++ {
+		if _, ok := number[i]; !ok {
+			res = append(res, i)
+		}
+	}
+
+	return res
+}

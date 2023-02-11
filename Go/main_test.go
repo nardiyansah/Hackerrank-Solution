@@ -709,3 +709,17 @@ func TestFindMaxAverage(t *testing.T) {
 		assert.Equal(t, test.output, findMaxAverage(test.nums, test.k))
 	}
 }
+
+func TestFindErrorNums(t *testing.T) {
+	tests := []struct {
+		nums   []int
+		output []int
+	}{
+		{[]int{3, 2, 2}, []int{2, 1}},
+		{[]int{3, 2, 3, 4, 6, 5}, []int{3, 1}},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.output, findErrorNums(test.nums))
+	}
+}
