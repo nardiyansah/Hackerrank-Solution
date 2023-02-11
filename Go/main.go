@@ -1320,3 +1320,21 @@ func averageOfLevels(root *TreeNode) []float64 {
 
 	return res
 }
+
+// https://leetcode.com/problems/maximum-average-subarray-i/
+func findMaxAverage(nums []int, k int) float64 {
+	var maxAverage = math.Inf(-1)
+
+	for i := 0; i+k <= len(nums); i++ {
+		sum := 0
+		for _, v := range nums[i : i+k] {
+			sum += v
+		}
+		temp := float64(sum) / float64(k)
+		if temp > maxAverage {
+			maxAverage = temp
+		}
+	}
+
+	return maxAverage
+}

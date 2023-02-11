@@ -693,3 +693,19 @@ func TestMaximumProduct(t *testing.T) {
 		assert.Equal(t, test.output, maximumProduct(test.input))
 	}
 }
+
+func TestFindMaxAverage(t *testing.T) {
+	tests := []struct {
+		nums   []int
+		k      int
+		output float64
+	}{
+		{[]int{1, 12, -5, -6, 50, 3}, 4, 12.75},
+		{[]int{5}, 1, 5.0},
+		{[]int{-1}, 1, -1.0},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.output, findMaxAverage(test.nums, test.k))
+	}
+}
