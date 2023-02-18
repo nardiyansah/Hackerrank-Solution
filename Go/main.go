@@ -1360,3 +1360,43 @@ func findErrorNums(nums []int) []int {
 
 	return res
 }
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+//https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+
+func findTarget(root *TreeNode, k int) bool {
+	remainSum := make(map[int]bool)
+	var childNode []*TreeNode
+
+	childNode = append(childNode, root)
+
+	for len(childNode) != 0 {
+		node := childNode[0]
+		childNode = childNode[1:]
+
+		if node.Left != nil {
+			childNode = append(childNode, node.Left)
+		}
+		if node.Right != nil {
+			childNode = append(childNode, node.Right)
+		}
+
+		val := node.Val
+
+		if _, ok := remainSum[val]; ok {
+			return true
+		} else {
+			r := k - val
+			remainSum[r] = true
+		}
+	}
+
+	return false
+}
