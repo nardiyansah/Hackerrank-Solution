@@ -1400,3 +1400,51 @@ func findTarget(root *TreeNode, k int) bool {
 
 	return false
 }
+
+/**
+ * Definition for singly-linked list.
+ */
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	var result *ListNode = new(ListNode)
+	pResult := result
+	p1, p2 := l1, l2
+	carry := false
+
+	for p1 != nil || p2 != nil {
+		var sum = 0
+		if carry {
+			sum += 1
+			carry = false
+		}
+		if p1 != nil {
+			sum += p1.Val
+			p1 = p1.Next
+		}
+		if p2 != nil {
+			sum += p2.Val
+			p2 = p2.Next
+		}
+		if sum > 9 {
+			carry = true
+			sum = sum % 10
+		}
+		pResult.Val = sum
+		if p1 != nil || p2 != nil {
+			pResult.Next = new(ListNode)
+			pResult = pResult.Next
+		}
+	}
+
+	if carry {
+		pResult.Next = new(ListNode)
+		pResult = pResult.Next
+		pResult.Val = 1
+	}
+
+	return result
+}
