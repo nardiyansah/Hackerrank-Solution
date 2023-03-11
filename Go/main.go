@@ -1469,3 +1469,76 @@ func judgeCircle(moves string) bool {
 
 	return x == 0 && y == 0
 }
+
+// https://leetcode.com/problems/image-smoother/
+func imageSmoother(img [][]int) [][]int {
+	yBound := len(img)
+	xBound := len(img[0])
+	res := make([][]int, yBound)
+	for y, _ := range img {
+		res[y] = make([]int, xBound)
+	}
+
+	for y, xValue := range img {
+		for x, _ := range xValue {
+			//	v1 = x-1,y+1
+			//	v2 = x, y+1
+			//	v3 = x+1,y+1
+			//	v4 = x+1,y
+			//	v5 = x+1,y-1
+			//	v6 = x,y-1
+			//	v7 = x-1,y-1
+			//	v8 = x-1,y
+			var yPlusOneOutOfRange, yMinusOneOutOfRange, xPlusOneOutOfRange, xMinusOneOutOfRange bool
+			if x-1 < 0 {
+				xMinusOneOutOfRange = true
+			}
+			if x+1 >= xBound {
+				xPlusOneOutOfRange = true
+			}
+			if y-1 < 0 {
+				yMinusOneOutOfRange = true
+			}
+			if y+1 >= yBound {
+				yPlusOneOutOfRange = true
+			}
+			var sum = img[y][x]
+			var divider = 1
+			if !xMinusOneOutOfRange && !yPlusOneOutOfRange {
+				sum += img[y+1][x-1]
+				divider += 1
+			}
+			if !yPlusOneOutOfRange {
+				sum += img[y+1][x]
+				divider += 1
+			}
+			if !xPlusOneOutOfRange && !yPlusOneOutOfRange {
+				sum += img[y+1][x+1]
+				divider += 1
+			}
+			if !xPlusOneOutOfRange {
+				sum += img[y][x+1]
+				divider += 1
+			}
+			if !xPlusOneOutOfRange && !yMinusOneOutOfRange {
+				sum += img[y-1][x+1]
+				divider += 1
+			}
+			if !yMinusOneOutOfRange {
+				sum += img[y-1][x]
+				divider += 1
+			}
+			if !xMinusOneOutOfRange && !yMinusOneOutOfRange {
+				sum += img[y-1][x-1]
+				divider += 1
+			}
+			if !xMinusOneOutOfRange {
+				sum += img[y][x-1]
+				divider += 1
+			}
+			res[y][x] = int(math.Floor(float64(sum) / float64(divider)))
+		}
+	}
+
+	return res
+}

@@ -723,3 +723,19 @@ func TestFindErrorNums(t *testing.T) {
 		assert.Equal(t, test.output, findErrorNums(test.nums))
 	}
 }
+
+func TestImageSmoother(t *testing.T) {
+	tests := []struct {
+		input  [][]int
+		output [][]int
+	}{
+		{
+			input:  [][]int{{1, 1, 1}, {1, 0, 1}, {1, 1, 1}},
+			output: [][]int{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+		},
+	}
+
+	for _, test := range tests {
+		assert.Equal(t, test.output, imageSmoother(test.input))
+	}
+}
