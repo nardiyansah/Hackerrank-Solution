@@ -1542,3 +1542,34 @@ func imageSmoother(img [][]int) [][]int {
 
 	return res
 }
+
+// https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
+func findSecondMinimumValue(root *TreeNode) int {
+
+	var secondMin int = root.Val
+	stackNode := []*TreeNode{root}
+
+	for len(stackNode) > 0 {
+		currNode := stackNode[0]
+		stackNode = stackNode[1:]
+
+		if currNode.Left != nil {
+			stackNode = append(stackNode, currNode.Left)
+		}
+
+		if currNode.Right != nil {
+			stackNode = append(stackNode, currNode.Right)
+		}
+
+		if secondMin == root.Val {
+			secondMin = currNode.Val
+		} else if root.Val < currNode.Val && currNode.Val < secondMin {
+			secondMin = currNode.Val
+		}
+	}
+
+	if secondMin == root.Val {
+		return -1
+	}
+	return secondMin
+}
