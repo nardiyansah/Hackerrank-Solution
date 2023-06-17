@@ -1573,3 +1573,14 @@ func findSecondMinimumValue(root *TreeNode) int {
 	}
 	return secondMin
 }
+
+// https://leetcode.com/problems/build-array-from-permutation/
+func buildArray(nums []int) []int {
+    ans := make([]int, len(nums)-1)
+
+		for i := 0; i < len(nums); i++ {
+			ans[i] = nums[nums[i]]
+		}
+
+		return ans
+}
